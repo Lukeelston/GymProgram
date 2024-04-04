@@ -1,0 +1,31 @@
+public class GymHall {
+    String name;
+    int capacity;
+    String location;
+    ArrayList<String> classesOffered;
+    ArrayList<String> trainers;
+
+    public GymHall(String name, int capacity, String location) {
+        this.name = name;
+        this.capacity = capacity;
+        this.location = location;
+        this.classesOffered = new ArrayList<>();
+        this.trainers = new ArrayList<>();
+    }
+
+    void addClass(String className) {
+        classesOffered.add(className);
+    }
+
+    void removeClass(String className) {
+        classesOffered.remove(className);
+    }
+
+    void addTrainer(String trainerName) {
+        trainers.add(trainerName);
+    }
+
+    void removeTrainer(String trainerName) {
+        trainers.remove(trainerName);
+    }
+}

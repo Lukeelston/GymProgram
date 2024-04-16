@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class GymClass {
+    private String className;
+    private int duration; 
+    private Trainer trainer; 
+    private List<String> schedule; 
+
+    public GymClass(String className, int duration, Trainer trainer, List<String> schedule) {
+        this.className = className;
+        this.duration = duration;
+        this.trainer = trainer;
+        this.schedule = new ArrayList<>(schedule);
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public Trainer getTrainer() {
+        return trainer;
+    }
+
+    public List<String> getSchedule() {
+        return new ArrayList<>(schedule);
+    }
+
+    public void setClassName(String newClassName) {
+        this.className = newClassName;
+    }
+
+    public void setDuration(int newDuration) {
+        this.duration = newDuration;
+    }
+
+    public void setTrainer(Trainer newTrainer) {
+        this.trainer = newTrainer;
+    }
+
+    public void setSchedule(List<String> newSchedule) {
+        this.schedule = new ArrayList<>(newSchedule);
+    }
+
+    public void addSchedule(String newSchedule) {
+        this.schedule.add(newSchedule);
+    }
+
+    public void removeSchedule(String scheduleToRemove) {
+        this.schedule.remove(scheduleToRemove);
+    }
+}

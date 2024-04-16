@@ -1,0 +1,95 @@
+package trainerprogram;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author joshu
+ */
+public class TrainerProgram {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner in = new Scanner(System.in);
+        int num = 0;
+        System.out.println("Phone Book");
+        System.out.println("___________");
+        System.out.println("1. view halls");
+        System.out.println("2. add halls");
+        System.out.println("3. Delete halls");
+        System.out.println("4. Exit");
+        do {
+            System.out.print("Your Input; ");
+            num = in.nextInt();
+            switch (num) {
+                case 1:
+                    int num2;
+                    System.out.println("1. Hall 1");
+                    System.out.println("2. Hall 2");
+                    System.out.println("3. Hall 3");
+                    System.out.println("4. Hall 4");
+                    System.out.println("5. Hall 5");
+                    System.out.println("6. Hall 6");
+                    System.out.println("7. Hall 7");
+                    System.out.println("8. Hall 8");
+                    System.out.println("9. Hall 9");
+                    System.out.println("10. Hall 10");
+                    System.out.println("11. Go back");
+                    do {
+                        System.out.print("Your Input; ");
+                        num2 = in.nextInt();
+                        switch (num2) {
+                            case 1:
+                                System.out.println("Viewing hall 1");
+                                break;
+                            case 2:
+                                System.out.println("Viewing hall 2");
+                                break;
+                            case 3:
+                                System.out.println("Viewing hall 3");
+                                break;
+                            case 4:
+                                System.out.println("Viewing hall 4");
+                            case 5:
+                                System.out.println("Viewing hall 5");
+                                break;
+                            case 6:
+                                System.out.println("Viewing hall 6");
+                            case 7:
+                                System.out.println("Viewing hall 7");
+                                break;
+                            case 8:
+                                System.out.println("Viewing hall 8");
+                                break;
+                            case 9:
+                                System.out.println("Viewing hall 9");
+                            case 10:
+                                System.out.println("Viewing hall 10");
+                                break;
+                            case 11:
+                                System.out.println("______");
+                              
+                        }
+                    } while (num2 != 11);
+                    break;
+                case 2:
+                    System.out.println("Hall added");
+                    break;
+                case 3:
+                    System.out.println("Hall deleted");
+                    break;
+                case 4:
+                    System.out.println("Goodbye");
+            }
+        } while (num != 4);
+
+        if (in.nextInt() == 2) {
+            System.out.println("Success2");
+        }
+
+    }
+
+}

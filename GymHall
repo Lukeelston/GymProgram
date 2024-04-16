@@ -1,9 +1,14 @@
+package com.mycompany.gymhall;
+
+import java.util.ArrayList;
+
 public class GymHall {
-    String name;
-    int capacity;
-    String location;
-    ArrayList<String> classesOffered;
-    ArrayList<String> trainers;
+    private String name;
+    private int capacity;
+    private String location;
+    private ArrayList<String> classesOffered;
+    private ArrayList<String> trainers;
+    private ArrayList<GymMembers> members;
 
     public GymHall(String name, int capacity, String location) {
         this.name = name;
@@ -11,21 +16,58 @@ public class GymHall {
         this.location = location;
         this.classesOffered = new ArrayList<>();
         this.trainers = new ArrayList<>();
+        this.members = new ArrayList<>();
     }
 
-    void addClass(String className) {
+    public void addClass(String className) {
         classesOffered.add(className);
     }
 
-    void removeClass(String className) {
+    public void removeClass(String className) {
         classesOffered.remove(className);
     }
 
-    void addTrainer(String trainerName) {
-        trainers.add(trainerName);
+    public void addMember(GymMembers member) {
+        members.add(member);
     }
 
-    void removeTrainer(String trainerName) {
-        trainers.remove(trainerName);
+    public void removeMember(GymMembers member) {
+        members.remove(member);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public ArrayList<String> getClassesOffered() {
+        return new ArrayList<>(classesOffered);
+    }
+
+    public ArrayList<String> getTrainers() {
+        return new ArrayList<>(trainers);
+    }
+
+    public ArrayList<GymMembers> getMembers() {
+        return new ArrayList<>(members);
     }
 }

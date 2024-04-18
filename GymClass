@@ -1,12 +1,41 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a gym class with information such as class name, duration,
+ * trainer, and schedule.
+ */
 public class GymClass {
-    private String className;
-    private int duration; 
-    private Trainer trainer; 
-    private List<String> schedule; 
 
+    /**
+     * The name of the class.
+     */
+    private String className;
+
+    /**
+     * The duration of the gym class in minutes.
+     */
+    private int duration;
+
+    /**
+     * The trainer in the gym class.
+     */
+    private Trainer trainer;
+
+    /**
+     * The schedule of the gym class as a list representing dates and times.
+     */
+    private List<String> schedule;
+
+    /**
+     * Constructs a GymClass object with the given class name, duration,
+     * trainer, and schedule.
+     *
+     * @param className The name of the gym class.
+     * @param duration The duration of the gym class in minutes.
+     * @param trainer The trainer of the gym class.
+     * @param schedule The schedule of the gym class as dates and times.
+     */
     public GymClass(String className, int duration, Trainer trainer, List<String> schedule) {
         this.className = className;
         this.duration = duration;
@@ -14,42 +43,84 @@ public class GymClass {
         this.schedule = new ArrayList<>(schedule);
     }
 
+    /**
+     * Returns the name of the gym class.
+     *
+     * @return The name of the gym class.
+     */
     public String getClassName() {
         return className;
     }
 
+    /**
+     * Returns the duration of the gym class in minutes.
+     *
+     * @return The duration of the gym class in minutes.
+     */
     public int getDuration() {
         return duration;
     }
 
+    /**
+     *
+     * @return The trainer of the gym class.
+     */
     public Trainer getTrainer() {
         return trainer;
     }
 
+    /**
+     *
+     * @return A copy of the schedule of the gym class.
+     */
     public List<String> getSchedule() {
         return new ArrayList<>(schedule);
     }
 
+    /**
+     *
+     * @param newClassName The new name of the gym class.
+     */
     public void setClassName(String newClassName) {
         this.className = newClassName;
     }
 
+    /**
+     *
+     * @param newDuration The new duration of the gym class in minutes.
+     */
     public void setDuration(int newDuration) {
         this.duration = newDuration;
     }
 
+    /**
+     *
+     * @param newTrainer The new trainer of the gym class.
+     */
     public void setTrainer(Trainer newTrainer) {
         this.trainer = newTrainer;
     }
 
+    /**
+     *
+     * @param newSchedule The new schedule of the gym class.
+     */
     public void setSchedule(List<String> newSchedule) {
         this.schedule = new ArrayList<>(newSchedule);
     }
 
+    /**
+     *
+     * @param newSchedule The new schedule to add to the gym class.
+     */
     public void addSchedule(String newSchedule) {
         this.schedule.add(newSchedule);
     }
 
+    /**
+     *
+     * @param scheduleToRemove The schedule to remove from the gym class.
+     */
     public void removeSchedule(String scheduleToRemove) {
         this.schedule.remove(scheduleToRemove);
     }

@@ -9,9 +9,9 @@ public class GymHall {
     private String name;
     private int capacity;
     private String location;
-    private ArrayList<String> classesOffered; //List to store classesOffered
-    private ArrayList<String> trainers; //List to store trainers
-    private ArrayList<GymMembers> members;  // List to store members
+    private ArrayList<GymClass> classesOffered; // List to store GymClass objects
+    private ArrayList<Trainer> trainers; // List to store Trainer objects
+    private ArrayList<GymMembers> members;  // List to store GymMembers objects
 
     /**
      * Constructs a new Gym Hall with specified name, capacity, and location.
@@ -31,21 +31,51 @@ public class GymHall {
     }
 
     /**
-     * Adds a class to the hall's schedule.
+     * Adds a GymClass to the hall's offerings.
      *
-     * @param className Name of the class to be added.
+     * @param newClass The GymClass object to be added.
      */
-    public void addClass(String className) {
-        classesOffered.add(className);
+    public void addClass(GymClass newClass) {
+        for (GymClass gymClass : classesOffered) {
+            if (gymClass.getClassName().equals(newClass.getClassName())) {
+                System.out.println("This class already exists in the hall.");
+                return;
+            }
+        }
+        classesOffered.add(newClass);
     }
 
     /**
-     * Removes a class from the hall's schedule.
+     * Removes a GymClass from the hall's offerings.
      *
      * @param className Name of the class to be removed.
      */
     public void removeClass(String className) {
-        classesOffered.remove(className);
+        classesOffered.removeIf(gymClass -> gymClass.getClassName().equals(className));
+    }
+
+    /**
+     * Adds a Trainer to the gym hall.
+     *
+     * @param newTrainer The Trainer object to be added.
+     */
+    public void addTrainer(Trainer newTrainer) {
+        for (Trainer trainer : trainers) {
+            if (trainer.getName().equals(newTrainer.getName())) {
+                System.out.println("This trainer is already working in the hall.");
+                return;
+            }
+        }
+        trainers.add(newTrainer);
+    }
+
+    /**
+     * Removes a Trainer from the gym hall.
+     *
+     * @param trainerName Name of the trainer to be removed.
+     */
+    public void removeTrainer(String trainerName) {
+        trainers.removeIf(trainer -> trainer.getName().equals(trainerName));
     }
 
     /**
@@ -66,83 +96,42 @@ public class GymHall {
         members.remove(member);
     }
 
-    /**
-     * Retrieves the name of the gym hall.
-     *
-     * @return A string representing the name of the gym hall.
-     */
+    // Getter and setter methods for name, capacity, and location
+
     public String getName() {
         return name;
     }
 
-    /**
-     * Sets the name of the gym hall.
-     *
-     * @param name New name for the gym hall.
-     */
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     * Retrieves the capacity of the gym hall.
-     *
-     * @return The maximum number of people that the hall can accommodate.
-     */
     public int getCapacity() {
         return capacity;
     }
 
-    /**
-     * Sets the capacity of the gym hall.
-     *
-     * @param capacity New capacity for the gym hall.
-     */
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 
-    /**
-     * Retrieves the location of the gym hall.
-     *
-     * @return A string representing the physical location of the gym hall.
-     */
     public String getLocation() {
         return location;
     }
 
-    /**
-     * Sets the location of the gym hall.
-     *
-     * @param location New physical location for the gym hall.
-     */
     public void setLocation(String location) {
         this.location = location;
     }
 
-    /**
-     * Retrieves the list of classes offered at the gym hall.
-     *
-     * @return An ArrayList of strings, each representing a class offered at the hall.
-     */
-    public ArrayList<String> getClassesOffered() {
+    // Methods to get copies of the lists to avoid direct modification
+
+    public ArrayList<GymClass> getClassesOffered() {
         return new ArrayList<>(classesOffered);
     }
 
-    /**
-     * Retrieves the list of trainers available at the gym hall.
-     *
-     * @return An ArrayList of strings, each representing a trainer at the hall.
-     */
-    public ArrayList<String> getTrainers() {
+    public ArrayList<Trainer> getTrainers() {
         return new ArrayList<>(trainers);
     }
 
-    /**
-     * Retrieves the list of members subscribed to the gym hall.
-     *
-     * @return An ArrayList of GymMembers, each representing a member of the hall.
-     */
     public ArrayList<GymMembers> getMembers() {
         return new ArrayList<>(members);
     }

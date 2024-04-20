@@ -80,4 +80,8 @@ public class GymMembers {
     public int getEndDate(){
         return endDate;
     }
+     @Override
+    public String toString(){
+        return String.format("Member Name: " + name + " | Member tier: " + tier + " | Start Date: " + startDate + " | End Datet: " + endDate + "\n");
+    }
 }

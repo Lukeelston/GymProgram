@@ -20,18 +20,18 @@ public class GymTester1 {
         GymHall halls[] = new GymHall[10];
         halls[0] = new GymHall("Fitness Tennessee", 100, "Chattanooga");
         halls[1] = new GymHall("Cleveland iron", 100, "Chattanooga");
-        halls[2] = new GymHall("badbok nepotism", 100, "Chattanooga");
-        halls[3] = new GymHall("goobermen tilly", 100, "Chattanooga");
-        halls[4] = new GymHall("Fscally wag", 100, "Chattanooga");
-        halls[5] = new GymHall("dooberman", 100, "Chattanooga");
-        halls[6] = new GymHall("ib", 100, "Chattanooga");
-        halls[7] = new GymHall("jib", 100, "Chattanooga");
-        halls[8] = new GymHall("rib", 100, "Chattanooga");
-        halls[9] = new GymHall("lib", 100, "Chattanooga");
+        halls[2] = new GymHall("Memphis Muscle", 100, "Chattanooga");
+        halls[3] = new GymHall("Collegedale Hustle", 100, "Chattanooga");
+        halls[4] = new GymHall("Red Bank Tank", 100, "Chattanooga");
+        halls[5] = new GymHall("Chattanooga Conditioning", 100, "Chattanooga");
+        halls[6] = new GymHall("Gatlinburg Gains", 100, "Chattanooga");
+        halls[7] = new GymHall("Franklin Fitness", 100, "Chattanooga");
+        halls[8] = new GymHall("Bristol Burn", 100, "Chattanooga");
+        halls[9] = new GymHall("Knoxville Kinetics", 100, "Chattanooga");
 
         // Setting some default trainers
         halls[0].trainers.add(new Trainer("John", "Zumba", halls[0].getLocation()));
-        halls[0].trainers.add(new Trainer("Doth", "Zumba", halls[0].getLocation()));
+        halls[0].trainers.add(new Trainer("Ross", "Zumba", halls[0].getLocation()));
         halls[0].trainers.add(new Trainer("Ron", "Zumba", halls[0].getLocation()));
         halls[0].trainers.add(new Trainer("Gilbert Rodrigez", "Zumba", halls[0].getLocation()));
 
@@ -43,16 +43,16 @@ public class GymTester1 {
         // setting up default members
         halls[0].members.add(new GymMembers("Jill Bob", 3, 1, 25));
         halls[0].members.add(new GymMembers("Donny", 4, 10, 13));
-        halls[0].members.add(new GymMembers("Tally", 1, 12, 30));
+        halls[0].members.add(new GymMembers("Tilly", 1, 12, 30));
         halls[0].members.add(new GymMembers("Jack", 17, 4, 17));
 
         halls[1].members.add(new GymMembers("Bobert", 3, 1, 25));
-        halls[1].members.add(new GymMembers("Doly", 4, 10, 13));
-        halls[1].members.add(new GymMembers("Flipion", 1, 12, 30));
-        halls[1].members.add(new GymMembers("Contake", 17, 4, 17));
+        halls[1].members.add(new GymMembers("Dolly", 4, 10, 13));
+        halls[1].members.add(new GymMembers("Felicia", 1, 12, 30));
+        halls[1].members.add(new GymMembers("Carmen", 17, 4, 17));
 
         int num = 0;
-        System.out.println("Gym Management");
+        System.out.println("Welcome to the Gym Management System");
         System.out.println("---------------");
 
         do {
@@ -75,7 +75,7 @@ public class GymTester1 {
                     }
                     // Second do loop, controls hall inspection
                     do {
-                        System.out.println("Which Hall do you want to inspect?Zz");
+                        System.out.println("Which Hall do you want to inspect?");
                         System.out.print("Your Input; ");
                         System.out.println("  ");
                         num2 = in.nextInt();

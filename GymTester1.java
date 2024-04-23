@@ -117,7 +117,7 @@ public class GymTester1 {
 
                                                 System.out.print("Enter " + name + " end date: ");
                                                 int endDate = in.nextInt();
-                                                halls[0].members.add(new GymMembers(name, tier, startDate, endDate));
+                                                halls[num2 -1].members.add(new GymMembers(name, tier, startDate, endDate));
                                                 break;
                                             case 2:
                                                 System.out.println("Deleting memember");

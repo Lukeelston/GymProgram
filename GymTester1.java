@@ -26,8 +26,8 @@ public class GymTester1 {
 
         halls[1].trainers.add(new Trainer("Tom", "Zumba", halls[0].getLocation()));
         halls[1].trainers.add(new Trainer("Bomb", "Zumba", halls[0].getLocation()));
-        halls[1].trainers.add(new Trainer("Skippg", "Zumba", halls[0].getLocation()));
-        halls[1].trainers.add(new Trainer("Rigerd", "Zumba", halls[0].getLocation()));
+        halls[1].trainers.add(new Trainer("Skipper", "Zumba", halls[0].getLocation()));
+        halls[1].trainers.add(new Trainer("Richard", "Zumba", halls[0].getLocation()));
 
         // setting up default members
         halls[0].members.add(new GymMembers("Jim-Bob", 3, 1, 25));

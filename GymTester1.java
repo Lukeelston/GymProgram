@@ -167,8 +167,6 @@ public class GymTester1 {
             }
         } while (num != 4);
 
-        if (in.nextInt() == 2) {
-            System.out.println("Success2");
-        }
+        
     }
 }

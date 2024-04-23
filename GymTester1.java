@@ -20,20 +20,20 @@ public class GymTester1 {
         halls[9] = new GymHall("Knoxville Kinetics", 100, "Knoxville");
 
         // Setting some default trainers
-        halls[0].getTrainers().add(new Trainer("John", "Zumba", halls[0].getLocation()));
-        halls[0].getTrainers().add(new Trainer("Ross", "Zumba", halls[0].getLocation()));
-        halls[0].getTrainers().add(new Trainer("Ron", "Zumba", halls[0].getLocation()));
-        halls[0].getTrainers().add(new Trainer("Gilbert Rodrigez", "Zumba", halls[0].getLocation()));
+        halls[0].getTrainers().add(new Trainer("John", "Group", halls[0].getLocation()));
+        halls[0].getTrainers().add(new Trainer("Ross", "Personal", halls[0].getLocation()));
+        halls[0].getTrainers().add(new Trainer("Ron", "kids", halls[0].getLocation()));
+        halls[0].getTrainers().add(new Trainer("Gilbert Rodrigez", "group", halls[0].getLocation()));
 
-        halls[1].getTrainers().add(new Trainer("Tom", "Zumba", halls[1].getLocation()));
-        halls[1].getTrainers().add(new Trainer("Bomb", "Zumba", halls[1].getLocation()));
-        halls[1].getTrainers().add(new Trainer("Skipper", "Zumba", halls[1].getLocation()));
-        halls[1].getTrainers().add(new Trainer("Richard", "Zumba", halls[1].getLocation()));
+        halls[1].getTrainers().add(new Trainer("Tom", "personal", halls[1].getLocation()));
+        halls[1].getTrainers().add(new Trainer("Bomb", "kids", halls[1].getLocation()));
+        halls[1].getTrainers().add(new Trainer("Skipper", "group", halls[1].getLocation()));
+        halls[1].getTrainers().add(new Trainer("Richard", "group", halls[1].getLocation()));
 
-        halls[2].getTrainers().add(new Trainer("Tom", "Zumba", halls[1].getLocation()));
-        halls[2].getTrainers().add(new Trainer("Bomb", "Zumba", halls[1].getLocation()));
-        halls[2].getTrainers().add(new Trainer("Skipper", "Zumba", halls[1].getLocation()));
-        halls[2].getTrainers().add(new Trainer("Richard", "Zumba", halls[1].getLocation()));
+        halls[2].getTrainers().add(new Trainer("Tom", "kids", halls[2].getLocation()));
+        halls[2].getTrainers().add(new Trainer("Bomb", "personal", halls[2].getLocation()));
+        halls[2].getTrainers().add(new Trainer("Skipper", "group", halls[2].getLocation()));
+        halls[2].getTrainers().add(new Trainer("Richard", "Zumba", halls[2].getLocation()));
 
         // Setting up default classes
         halls[0].getClassOffered().add(new GymClass("Yoga", 1, halls[0].getTrainers().get(0), "Monday 9 AM"));
@@ -43,7 +43,7 @@ public class GymTester1 {
         halls[1].getClassOffered().add(new GymClass("Kickboxing", 1, halls[1].getTrainers().get(1), "Friday 6 PM"));
 
         halls[2].getClassOffered().add(new GymClass("Spin Class", 1, halls[2].getTrainers().get(0), "Thursday 5 PM"));
-        halls[2].getClassOffered().add(new GymClass("Crossfit", 1, new Trainer("Bob", "Crossfit", halls[2].getLocation()), "Saturday 10 AM"));
+        halls[2].getClassOffered().add(new GymClass("Crossfit", 1, halls[2].getTrainers().get(0), "Saturday 10 AM"));
 
         // setting up default members
         halls[0].getMembers().add(new GymMembers("Jim-Bob", 3, 1, 25));

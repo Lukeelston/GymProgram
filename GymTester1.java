@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 public class GymTester1 {
 
@@ -24,10 +23,10 @@ public class GymTester1 {
         halls[0].trainers.add(new Trainer("Ron", "Zumba", halls[0].getLocation()));
         halls[0].trainers.add(new Trainer("Gilbert Rodrigez", "Zumba", halls[0].getLocation()));
 
-        halls[1].trainers.add(new Trainer("Tom", "Zumba", halls[0].getLocation()));
-        halls[1].trainers.add(new Trainer("Bomb", "Zumba", halls[0].getLocation()));
-        halls[1].trainers.add(new Trainer("Skipper", "Zumba", halls[0].getLocation()));
-        halls[1].trainers.add(new Trainer("Richard", "Zumba", halls[0].getLocation()));
+        halls[1].trainers.add(new Trainer("Tom", "Zumba", halls[1].getLocation()));
+        halls[1].trainers.add(new Trainer("Bomb", "Zumba", halls[1].getLocation()));
+        halls[1].trainers.add(new Trainer("Skipper", "Zumba", halls[1].getLocation()));
+        halls[1].trainers.add(new Trainer("Richard", "Zumba", halls[1].getLocation()));
 
         // setting up default members
         halls[0].members.add(new GymMembers("Jim-Bob", 3, 1, 25));
@@ -46,9 +45,8 @@ public class GymTester1 {
 
         do {
             System.out.println("1. view halls");
-            System.out.println("2. add halls");
-            System.out.println("3. Delete halls");
-            System.out.println("4. Exit");
+            System.out.println("2. Replace");
+            System.out.println("3. Exit");
             System.out.print("Your Input: ");
             num = in.nextInt();
             switch (num) {
@@ -82,17 +80,46 @@ public class GymTester1 {
                             num3 = in.nextInt();
                             switch (num3) {
                                 case 1:
+                                    int num4;
                                     System.out.println("Viewing Trainers");
                                     for (int i = 0; i < halls[num2 - 1].trainers.size(); i++) {
-                                        System.out.println("Name:" + halls[num2 - 1].trainers.get(i).getName());
+                                        System.out.println( (i+1) + "|" + "Name:" + halls[num2 - 1].trainers.get(i).getName());
                                     }
-                                    System.out.println("  ");
+                                     do {
+                                        System.out.println("What action do you want to do?");
+                                        System.out.println("1. add trainers");
+                                        System.out.println("2. Delete trainers");
+                                        System.out.println("3. Exit");
+                                        num4 = in.nextInt();
+                                        switch (num4) {
+                                            case 1:
+                                                System.out.println("Adding Trainers");
+                                                System.out.println(num4);
+                                                System.out.print("Enter a new Trainer name: ");
+                                                String name = in.next();
+                                                System.out.print("Enter " + name + " tier: ");
+                                                String trainType = in.next();
+
+                                                
+                                                String hallName = halls[num2-1].getName();
+                                                halls[num2 -1].trainers.add(new Trainer(name, trainType, hallName));
+                                                break;
+                                            case 2:
+                                                System.out.println("Deleting Trainer");
+                                                System.out.println("Which trainer do you want to delete?");
+                                                System.out.print("Your Input:");
+                                                halls[num2-1].trainers.remove(in.nextInt() - 1);
+                                                break;
+                                            case 3:
+                                                System.out.println("Goodbye");
+                                        }
+                                    } while (num4 != 3);
+
                                     break;
                                 case 2:
                                     System.out.println("Viewing classes");
                                     break;
                                 case 3:
-                                    int num4;
                                     System.out.println("Viewing members");
                                     for (int i = 0; i < halls[num2 - 1].members.size(); i++) {
                                         System.out.println("Name:" + halls[num2 - 1].members.get(i).getName());
@@ -135,37 +162,26 @@ public class GymTester1 {
                     } while (num2 != 11);
                     break;
                 case 2:
-                    System.out.println("Adding a new hall");
+                    System.out.println("Replacing a hall");
+                    System.out.print("Which hall to replace?");
+                    int selection = in.nextInt();
+                    
                     System.out.print("Enter the name of the new hall: ");
                     String newName = in.next();
                     System.out.print("Enter the capacity of the new hall: ");
                     int newCapacity = in.nextInt();
                     System.out.print("Enter the location of the new hall: ");
                     String newLocation = in.next();
-
-                    GymHall newHall = new GymHall(newName, newCapacity, newLocation);
-                    halls.add(newHall);
+                    halls[selection - 1] = new GymHall(newName, newCapacity, newLocation);
                     System.out.println("New hall added successfully!");
                     break;
-                        }
-                    }
-                    break;
                 case 3:
-                    System.out.println("Deleting a hall");
-                    System.out.print("Enter the index of the hall you want to delete: ");
-                    int deleteIndex = in.nextInt();
-
-                    if (deleteIndex >= 1 && deleteIndex <= halls.size()) {
-                        halls.remove(deleteIndex - 1);
-                        System.out.println("Hall deleted successfully!");
-                    } else {
-                        System.out.println("Invalid hall index.");
-                    }
+                   System.out.println("Goodbye");
+                    
                     break;
-                case 4:
-                    System.out.println("Goodbye");
+              
             }
-        } while (num != 4);
+        } while (num != 3);
 
         
     }

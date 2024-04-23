@@ -105,7 +105,7 @@ public class GymTester1 {
                                         num4 = in.nextInt();
                                         switch (num4) {
                                             case 1:
-                                                System.out.println("Adding memember");
+                                                System.out.println("Adding member");
                                                 System.out.println(num4);
                                                 System.out.print("Enter a new member name: ");
                                                 String name = in.next();

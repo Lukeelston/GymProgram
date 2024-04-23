@@ -137,7 +137,7 @@ public class GymTester1 {
                                 case 2:
                                     System.out.println("Viewing classes");
                                     for (int i = 0; i < halls[num2 - 1].classesOffered.size(); i++) {
-                                        System.out.println((i + 1) + "|" + "Name:" + halls[num2 - 1].classesOffered.get(i).getClassName());
+                                        System.out.println((i + 1) + "|" + "Name:" + halls[num2 - 1].classesOffered.get(i).getClassName() + "| Trainer:" + halls[num2 -1].classesOffered.get(i).trainer.getName());
                                     }
                                     do {
                                         System.out.println("What action do you want to do?");

@@ -85,4 +85,3 @@ public class Trainer {
         return String.format("Trainer Name: " + name + " | Train type: " + trainType + " | Trainer Hall: " + hall + "\n");
     }
 }
-@Override

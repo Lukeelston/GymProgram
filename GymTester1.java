@@ -1,4 +1,6 @@
+
 import java.util.Scanner;
+
 public class GymTester1 {
 
     public static void main(String[] args) {
@@ -27,7 +29,22 @@ public class GymTester1 {
         halls[1].trainers.add(new Trainer("Bomb", "Zumba", halls[1].getLocation()));
         halls[1].trainers.add(new Trainer("Skipper", "Zumba", halls[1].getLocation()));
         halls[1].trainers.add(new Trainer("Richard", "Zumba", halls[1].getLocation()));
+        
+        halls[2].trainers.add(new Trainer("Tom", "Zumba", halls[1].getLocation()));
+        halls[2].trainers.add(new Trainer("Bomb", "Zumba", halls[1].getLocation()));
+        halls[2].trainers.add(new Trainer("Skipper", "Zumba", halls[1].getLocation()));
+        halls[2].trainers.add(new Trainer("Richard", "Zumba", halls[1].getLocation()));
 
+        // Setting up default classes
+        halls[0].classesOffered.add(new GymClass("Yoga", 1, halls[0].trainers.get(0), "Monday 9 AM"));
+        halls[0].classesOffered.add(new GymClass("Aerobics", 1,  halls[0].trainers.get(1), "Wednesday 7 AM"));
+
+        halls[1].classesOffered.add(new GymClass("Pilates", 1, halls[1].trainers.get(0), "Tuesday 10 AM"));
+        halls[1].classesOffered.add(new GymClass("Kickboxing", 1, halls[1].trainers.get(1), "Friday 6 PM"));
+
+        halls[2].classesOffered.add(new GymClass("Spin Class", 1, halls[2].trainers.get(0), "Thursday 5 PM"));
+        halls[2].classesOffered.add(new GymClass("Crossfit", 1, new Trainer("Bob", "Crossfit", halls[2].getLocation()), "Saturday 10 AM"));
+        
         // setting up default members
         halls[0].members.add(new GymMembers("Jim-Bob", 3, 1, 25));
         halls[0].members.add(new GymMembers("Donny", 4, 10, 13));
@@ -83,9 +100,9 @@ public class GymTester1 {
                                     int num4;
                                     System.out.println("Viewing Trainers");
                                     for (int i = 0; i < halls[num2 - 1].trainers.size(); i++) {
-                                        System.out.println( (i+1) + "|" + "Name:" + halls[num2 - 1].trainers.get(i).getName());
+                                        System.out.println((i + 1) + "|" + "Name:" + halls[num2 - 1].trainers.get(i).getName());
                                     }
-                                     do {
+                                    do {
                                         System.out.println("What action do you want to do?");
                                         System.out.println("1. add trainers");
                                         System.out.println("2. Delete trainers");
@@ -100,15 +117,14 @@ public class GymTester1 {
                                                 System.out.print("Enter " + name + " tier: ");
                                                 String trainType = in.next();
 
-                                                
-                                                String hallName = halls[num2-1].getName();
-                                                halls[num2 -1].trainers.add(new Trainer(name, trainType, hallName));
+                                                String hallName = halls[num2 - 1].getName();
+                                                halls[num2 - 1].trainers.add(new Trainer(name, trainType, hallName));
                                                 break;
                                             case 2:
                                                 System.out.println("Deleting Trainer");
                                                 System.out.println("Which trainer do you want to delete?");
                                                 System.out.print("Your Input:");
-                                                halls[num2-1].trainers.remove(in.nextInt() - 1);
+                                                halls[num2 - 1].trainers.remove(in.nextInt() - 1);
                                                 break;
                                             case 3:
                                                 System.out.println("Goodbye");
@@ -118,6 +134,9 @@ public class GymTester1 {
                                     break;
                                 case 2:
                                     System.out.println("Viewing classes");
+                                    for (int i = 0; i < halls[num2 - 1].classesOffered.size(); i++) {
+                                        System.out.println((i + 1) + "|" + "Name:" + halls[num2 - 1].classesOffered.get(i).getClassName());
+                                    }
                                     break;
                                 case 3:
                                     System.out.println("Viewing members");
@@ -144,7 +163,7 @@ public class GymTester1 {
 
                                                 System.out.print("Enter " + name + " end date: ");
                                                 int endDate = in.nextInt();
-                                                halls[num2 -1].members.add(new GymMembers(name, tier, startDate, endDate));
+                                                halls[num2 - 1].members.add(new GymMembers(name, tier, startDate, endDate));
                                                 break;
                                             case 2:
                                                 System.out.println("Deleting memember");
@@ -165,7 +184,7 @@ public class GymTester1 {
                     System.out.println("Replacing a hall");
                     System.out.print("Which hall to replace?");
                     int selection = in.nextInt();
-                    
+
                     System.out.print("Enter the name of the new hall: ");
                     String newName = in.next();
                     System.out.print("Enter the capacity of the new hall: ");
@@ -176,13 +195,12 @@ public class GymTester1 {
                     System.out.println("New hall added successfully!");
                     break;
                 case 3:
-                   System.out.println("Goodbye");
-                    
+                    System.out.println("Goodbye");
+
                     break;
-              
+
             }
         } while (num != 3);
 
-        
     }
 }

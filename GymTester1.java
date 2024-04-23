@@ -1,33 +1,22 @@
 
 import java.util.Scanner;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author joshu
- */
 public class GymTester1 {
 
     public static void main(String[] args) {
-        // TODO code application logic here
         Scanner in = new Scanner(System.in);
 
         // setting up an array and setting up the default values
         GymHall halls[] = new GymHall[10];
         halls[0] = new GymHall("Fitness Tennessee", 100, "Chattanooga");
-        halls[1] = new GymHall("Cleveland iron", 100, "Chattanooga");
-        halls[2] = new GymHall("Memphis Muscle", 100, "Chattanooga");
-        halls[3] = new GymHall("Collegedale Hustle", 100, "Chattanooga");
-        halls[4] = new GymHall("Red Bank Tank", 100, "Chattanooga");
+        halls[1] = new GymHall("Cleveland iron", 100, "Cleveland");
+        halls[2] = new GymHall("Memphis Muscle", 100, "Memphis");
+        halls[3] = new GymHall("Collegedale Hustle", 100, "Collegedale");
+        halls[4] = new GymHall("Red Bank Tank", 100, "Red Bank");
         halls[5] = new GymHall("Chattanooga Conditioning", 100, "Chattanooga");
-        halls[6] = new GymHall("Gatlinburg Gains", 100, "Chattanooga");
-        halls[7] = new GymHall("Franklin Fitness", 100, "Chattanooga");
-        halls[8] = new GymHall("Bristol Burn", 100, "Chattanooga");
-        halls[9] = new GymHall("Knoxville Kinetics", 100, "Chattanooga");
+        halls[6] = new GymHall("Gatlinburg Gains", 100, "Gatlinburg");
+        halls[7] = new GymHall("Franklin Fitness", 100, "Franklin");
+        halls[8] = new GymHall("Bristol Burn", 100, "Bristol");
+        halls[9] = new GymHall("Knoxville Kinetics", 100, "Knoxville");
 
         // Setting some default trainers
         halls[0].trainers.add(new Trainer("John", "Zumba", halls[0].getLocation()));
@@ -41,12 +30,12 @@ public class GymTester1 {
         halls[1].trainers.add(new Trainer("Rigerd", "Zumba", halls[0].getLocation()));
 
         // setting up default members
-        halls[0].members.add(new GymMembers("Jill Bob", 3, 1, 25));
+        halls[0].members.add(new GymMembers("Jim-Bob", 3, 1, 25));
         halls[0].members.add(new GymMembers("Donny", 4, 10, 13));
         halls[0].members.add(new GymMembers("Tilly", 1, 12, 30));
         halls[0].members.add(new GymMembers("Jack", 17, 4, 17));
 
-        halls[1].members.add(new GymMembers("Bobert", 3, 1, 25));
+        halls[1].members.add(new GymMembers("Robert", 3, 1, 25));
         halls[1].members.add(new GymMembers("Dolly", 4, 10, 13));
         halls[1].members.add(new GymMembers("Felicia", 1, 12, 30));
         halls[1].members.add(new GymMembers("Carmen", 17, 4, 17));
@@ -146,10 +135,39 @@ public class GymTester1 {
                     } while (num2 != 11);
                     break;
                 case 2:
-                    System.out.println("Hall added");
+                    System.out.println("Adding a new hall");
+                    System.out.print("Enter the name of the new hall: ");
+                    String newName = in.next();
+                    System.out.print("Enter the capacity of the new hall: ");
+                    int newCapacity = in.nextInt();
+                    System.out.print("Enter the location of the new hall: ");
+                    String newLocation = in.next();
+
+                    GymHall newHall = new GymHall(newName, newCapacity, newLocation);
+
+                    for (int i = 0; i < halls.length; i++) {
+                        if (halls[i] == null) {
+                            halls[i] = newHall;
+                            System.out.println("New hall added successfully!");
+                            break;
+                        }
+                    }
                     break;
                 case 3:
-                    System.out.println("Hall deleted");
+                    System.out.println("Deleting a hall");
+                    System.out.print("Enter the index of the hall you want to delete: ");
+                    int deleteIndex = in.nextInt();
+
+                    if (deleteIndex >= 1 && deleteIndex <= halls.length && halls[deleteIndex - 1] != null) {
+                        for (int i = deleteIndex - 1; i < halls.length - 1; i++) {
+                            halls[i] = halls[i + 1];
+                        }
+                        halls[halls.length - 1] = null;
+
+                        System.out.println("Hall deleted successfully!");
+                    } else {
+                        System.out.println("Invalid hall.");
+                    }
                     break;
                 case 4:
                     System.out.println("Goodbye");

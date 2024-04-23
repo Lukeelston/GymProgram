@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trainerprogram;
+
 
 /**
  *
@@ -80,5 +80,9 @@ public class Trainer {
     public String Hall(){
         return hall;
     }
-    
+    @Override
+    public String toString(){
+        return String.format("Trainer Name: " + name + " | Train type: " + trainType + " | Trainer Hall: " + hall + "\n");
+    }
 }
+@Override

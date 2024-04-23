@@ -155,15 +155,11 @@ public class GymTester1 {
                     System.out.print("Enter the index of the hall you want to delete: ");
                     int deleteIndex = in.nextInt();
 
-                    if (deleteIndex >= 1 && deleteIndex <= halls.length && halls[deleteIndex - 1] != null) {
-                        for (int i = deleteIndex - 1; i < halls.length - 1; i++) {
-                            halls[i] = halls[i + 1];
-                        }
-                        halls[halls.length - 1] = null;
-
+                    if (deleteIndex >= 1 && deleteIndex <= halls.size()) {
+                        halls.remove(deleteIndex - 1);
                         System.out.println("Hall deleted successfully!");
                     } else {
-                        System.out.println("Invalid hall.");
+                        System.out.println("Invalid hall index.");
                     }
                     break;
                 case 4:

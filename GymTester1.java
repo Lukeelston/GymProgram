@@ -144,12 +144,9 @@ public class GymTester1 {
                     String newLocation = in.next();
 
                     GymHall newHall = new GymHall(newName, newCapacity, newLocation);
-
-                    for (int i = 0; i < halls.length; i++) {
-                        if (halls[i] == null) {
-                            halls[i] = newHall;
-                            System.out.println("New hall added successfully!");
-                            break;
+                    halls.add(newHall);
+                    System.out.println("New hall added successfully!");
+                    break;
                         }
                     }
                     break;
